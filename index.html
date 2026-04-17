@@ -4,84 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Junaid aur Shagufta ki Shaadi</title>
-    <!-- CSS and Fonts -->
+    <!-- Tailwind and Lucide Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
+        
         body { font-family: 'Playfair Display', serif; scroll-behavior: smooth; }
         .font-sans { font-family: 'Inter', sans-serif; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        
+        @keyframes fadeInUp { 
+            from { opacity: 0; transform: translateY(30px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
         .animate-fade-in-up { animation: fadeInUp 1.2s ease-out forwards; }
+        
+        @keyframes bounceIn { 
+            0% { transform: scale(0.95); opacity: 0; } 
+            100% { transform: scale(1); opacity: 1; } 
+        }
+        .animate-bounce-in { animation: bounceIn 0.4s ease-out forwards; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fdfaf5; }
+        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 10px; }
     </style>
 </head>
 <body class="bg-[#fdfaf5] text-[#2c3e50] selection:bg-[#d4af37] selection:text-white pb-20">
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+    <section class="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none" 
+             style="background-image: url('https://www.transparenttextures.com/patterns/arabesque.png')">
+        </div>
+        
         <div class="z-10 animate-fade-in-up">
             <div class="flex justify-center mb-6">
-                <!-- Ensure this image is in the same folder as index.html -->
-                <img src="image_564b80.png" alt="Bismillah" class="w-64 md:w-80 h-auto drop-shadow-md">
+                <img src="image_564b80.png" alt="Bismillah" class="w-64 md:w-80 h-auto drop-shadow-md" onerror="this.style.display='none'; document.getElementById('bismillah-fallback').style.display='block';">
+                <p id="bismillah-fallback" class="hidden text-[#d4af37] text-2xl italic font-sans">Bismillahir Rahmanir Rahim</p>
             </div>
+
             <div class="w-24 h-px bg-[#d4af37] mx-auto mb-8"></div>
+            
             <h2 class="text-lg md:text-xl uppercase tracking-[0.3em] mb-4 text-gray-500 font-sans">Nikaah e Mubarak</h2>
-            <h1 class="text-5xl md:text-8xl font-bold mb-6 text-[#1a472a]">Junaid <span class="text-[#d4af37]">&</span> Shagufta</h1>
+            <h1 class="text-5xl md:text-8xl font-bold mb-6 text-[#1a472a] drop-shadow-sm">
+                Junaid <span class="text-[#d4af37]">&</span> Shagufta
+            </h1>
+            
             <div class="flex items-center justify-center gap-4 mb-8">
                 <div class="h-px w-8 bg-[#d4af37]"></div>
+                <i data-lucide="calendar" class="text-[#d4af37] w-5 h-5"></i>
                 <span class="text-lg font-medium tracking-widest uppercase font-sans">23 . 05 . 2026</span>
                 <div class="h-px w-8 bg-[#d4af37]"></div>
             </div>
+
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-[#d4af37] animate-bounce">
+                <i data-lucide="chevron-down" class="w-8 h-8"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-24 px-6 bg-white border-y border-[#eee]">
+        <div class="max-w-2xl mx-auto text-center">
+            <i data-lucide="heart" class="mx-auto mb-6 text-[#d4af37] opacity-50 w-8 h-8 fill-current"></i>
+            <p class="text-xl md:text-2xl leading-relaxed italic text-gray-700">
+                "Aur Humne tumhein jodon mein paida kiya..."
+            </p>
+            <p class="mt-4 font-semibold text-[#1a472a] font-sans text-lg">— Surah An-Naba, 78:8</p>
         </div>
     </section>
 
     <!-- Program Details -->
-    <section class="py-20 px-6 max-w-6xl mx-auto">
-        <h2 class="text-4xl text-center mb-16 text-[#1a472a] font-bold italic">Program Details</h2>
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl text-center mb-16 text-[#1a472a] font-bold italic underline decoration-[#d4af37] decoration-1 underline-offset-8">Program Details</h2>
         <div class="grid md:grid-cols-2 gap-12">
-            <!-- Nikkah -->
-            <div class="bg-[#1a472a] text-white p-10 rounded-3xl shadow-2xl border-b-8 border-[#d4af37] transform transition hover:scale-105 duration-300">
-                <h3 class="text-3xl font-bold mb-6 italic underline decoration-[#d4af37]">Shaadi / Nikaah</h3>
-                <div class="space-y-4 font-sans text-lg">
-                    <p><strong><i class="fa fa-calendar"></i> Tareekh:</strong> 23 May 2026</p>
-                    <p><strong><i class="fa fa-clock"></i> Waqt:</strong> Subah 11:00 AM</p>
-                    <p><strong><i class="fa fa-map-marker"></i> Maqaam:</strong> Urdu High School, Buldhana</p>
+            
+            <!-- Wedding / Nikkah -->
+            <div class="bg-[#1a472a] text-white p-10 rounded-[2.5rem] shadow-2xl border-b-8 border-[#d4af37] transform transition hover:scale-[1.02] duration-300">
+                <div class="flex justify-between items-start mb-8">
+                    <h3 class="text-3xl font-bold italic">Shaadi / Nikaah</h3>
+                    <div class="bg-[#d4af37] text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-widest font-sans font-bold">23 May 2026</div>
+                </div>
+                <div class="space-y-8">
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="clock" class="text-[#d4af37] w-6 h-6"></i>
+                        <div>
+                            <p class="font-bold text-lg font-sans">Waqt</p>
+                            <p class="opacity-90 font-sans">Subah 11:00 AM</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="map-pin" class="text-[#d4af37] w-6 h-6"></i>
+                        <div>
+                            <p class="font-bold text-lg font-sans">Maqaam (Venue)</p>
+                            <p class="opacity-90 font-sans leading-relaxed">Urdu High School, Buldhana</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <!-- Walima -->
-            <div class="bg-white border-2 border-[#1a472a] p-10 rounded-3xl shadow-xl transform transition hover:scale-105 duration-300">
-                <h3 class="text-3xl font-bold text-[#1a472a] mb-6 italic underline decoration-[#d4af37]">Dawat-e-Walima</h3>
-                <div class="space-y-4 font-sans text-lg text-gray-700">
-                    <p><strong>Tareekh:</strong> 24 May 2026</p>
-                    <p><strong>Waqt:</strong> Subah 11:00 AM</p>
-                    <p><strong>Maqaam:</strong> Iqra Function Hall, Deulghat, Buldhana</p>
+            <div class="bg-white border-2 border-[#1a472a] p-10 rounded-[2.5rem] shadow-xl transform transition hover:scale-[1.02] duration-300">
+                <div class="flex justify-between items-start mb-8">
+                    <h3 class="text-3xl font-bold text-[#1a472a] italic">Dawat-e-Walima</h3>
+                    <div class="bg-[#1a472a] text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-widest font-sans font-bold">24 May 2026</div>
+                </div>
+                <div class="space-y-8 text-gray-700">
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="clock" class="text-[#d4af37] w-6 h-6"></i>
+                        <div>
+                            <p class="font-bold text-lg text-[#1a472a] font-sans">Waqt</p>
+                            <p class="font-sans">Subah 11:00 AM</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="map-pin" class="text-[#d4af37] w-6 h-6"></i>
+                        <div>
+                            <p class="font-bold text-lg text-[#1a472a] font-sans">Maqaam (Venue)</p>
+                            <p class="font-sans leading-relaxed">Iqra Function Hall, Deulghat, Buldhana</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Countdown Section -->
-    <section class="py-16 text-center bg-[#f9f5ef] border-y border-[#eee]">
-        <h3 class="text-xl mb-10 tracking-widest text-gray-400 uppercase font-sans font-semibold">Wedding Countdown</h3>
-        <div id="countdown" class="flex justify-center gap-4 md:gap-10 text-[#1a472a] font-sans font-bold">
-            <div class="flex flex-col"><span id="days" class="text-4xl md:text-6xl">00</span><span class="text-xs uppercase text-[#d4af37] mt-2">Days</span></div>
-            <div class="text-4xl md:text-6xl opacity-30">:</div>
-            <div class="flex flex-col"><span id="hours" class="text-4xl md:text-6xl">00</span><span class="text-xs uppercase text-[#d4af37] mt-2">Hours</span></div>
-            <div class="text-4xl md:text-6xl opacity-30">:</div>
-            <div class="flex flex-col"><span id="minutes" class="text-4xl md:text-6xl">00</span><span class="text-xs uppercase text-[#d4af37] mt-2">Mins</span></div>
-            <div class="text-4xl md:text-6xl opacity-30">:</div>
-            <div class="flex flex-col"><span id="seconds" class="text-4xl md:text-6xl">00</span><span class="text-xs uppercase text-[#d4af37] mt-2">Secs</span></div>
+    <section class="py-20 text-center bg-[#f9f5ef] border-y border-[#eee]">
+        <h3 class="text-xl mb-12 tracking-widest text-gray-400 uppercase font-sans font-semibold">Wedding Countdown</h3>
+        <div id="countdown" class="flex justify-center gap-4 md:gap-12 text-[#1a472a] font-sans font-bold">
+            <div class="flex flex-col">
+                <span id="days" class="text-4xl md:text-7xl">00</span>
+                <span class="text-xs uppercase text-[#d4af37] mt-3 tracking-widest font-bold">Days</span>
+            </div>
+            <div class="text-4xl md:text-7xl opacity-20 font-light">:</div>
+            <div class="flex flex-col">
+                <span id="hours" class="text-4xl md:text-7xl">00</span>
+                <span class="text-xs uppercase text-[#d4af37] mt-3 tracking-widest font-bold">Hours</span>
+            </div>
+            <div class="text-4xl md:text-7xl opacity-20 font-light">:</div>
+            <div class="flex flex-col">
+                <span id="minutes" class="text-4xl md:text-7xl">00</span>
+                <span class="text-xs uppercase text-[#d4af37] mt-3 tracking-widest font-bold">Mins</span>
+            </div>
+            <div class="text-4xl md:text-7xl opacity-20 font-light">:</div>
+            <div class="flex flex-col">
+                <span id="seconds" class="text-4xl md:text-7xl">00</span>
+                <span class="text-xs uppercase text-[#d4af37] mt-3 tracking-widest font-bold">Secs</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="py-24 px-6 max-w-xl mx-auto text-center">
+        <div class="bg-white p-12 rounded-[3.5rem] shadow-2xl border border-gray-100 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-[#d4af37]"></div>
+            <h2 class="text-3xl mb-10 text-[#1a472a] italic font-bold">Kya Aap Tashreef Layenge?</h2>
+            
+            <div id="rsvp-options" class="flex flex-col gap-4">
+                <button onclick="submitRSVP('yes')" class="bg-[#1a472a] text-white py-5 rounded-full font-bold hover:shadow-xl transition-all transform hover:-translate-y-1 font-sans text-lg">
+                    Zaroor Ayenge (InshaAllah)
+                </button>
+                <button onclick="submitRSVP('no')" class="bg-gray-50 text-gray-400 py-5 rounded-full font-bold hover:bg-gray-100 transition-all font-sans text-lg">
+                    Maazrat (Nahi aa sakte)
+                </button>
+            </div>
+
+            <div id="rsvp-success" class="hidden animate-bounce-in bg-green-50 text-green-800 p-8 rounded-[2rem] border border-green-100">
+                <i data-lucide="check-circle-2" class="mx-auto mb-4 w-12 h-12 text-green-500"></i>
+                <p class="font-bold text-xl mb-2 font-sans">MashaAllah!</p>
+                <p class="font-sans">Humein aapka intezar rahega.</p>
+                <button onclick="resetRSVP()" class="mt-6 text-xs underline opacity-50 font-sans hover:opacity-100">Response badlein</button>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 bg-[#1a472a] text-white text-center">
-        <p class="text-[#d4af37] italic text-3xl font-bold mb-4">Duaon ke talabgaar</p>
-        <div class="w-16 h-px bg-[#d4af37] mx-auto opacity-30 mb-8"></div>
-        <p class="text-xs uppercase tracking-[0.5em] opacity-40 font-sans">Buldhana • Deulghat</p>
+    <footer class="py-24 bg-[#1a472a] text-white text-center">
+        <p class="text-[#d4af37] italic text-3xl font-bold mb-6">Duaon ke talabgaar</p>
+        <div class="w-20 h-px bg-[#d4af37] mx-auto opacity-30 mb-10"></div>
+        <p class="text-[10px] uppercase tracking-[0.6em] opacity-40 font-sans">Buldhana • Deulghat</p>
     </footer>
 
-    <!-- JavaScript for Countdown -->
+    <!-- Scripts -->
     <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Countdown Logic
         function updateCountdown() {
             const weddingDate = new Date('May 23, 2026 11:00:00').getTime();
             const now = new Date().getTime();
@@ -95,7 +208,22 @@
             }
         }
         setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call
+        updateCountdown();
+
+        // RSVP Logic
+        function submitRSVP(status) {
+            if(status === 'yes') {
+                document.getElementById('rsvp-options').classList.add('hidden');
+                document.getElementById('rsvp-success').classList.remove('hidden');
+            } else {
+                alert("Koi baat nahi, humein aapki kami mehsoos hogi.");
+            }
+        }
+
+        function resetRSVP() {
+            document.getElementById('rsvp-options').classList.remove('hidden');
+            document.getElementById('rsvp-success').classList.add('hidden');
+        }
     </script>
 </body>
 </html>
