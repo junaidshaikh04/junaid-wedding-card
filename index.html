@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junaid aur Shagufta ki Shaadi</title>
+    <!-- CSS and Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&display=swap');
+        body { font-family: 'Playfair Display', serif; scroll-behavior: smooth; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-up { animation: fadeInUp 1.2s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-[#fdfaf5] text-[#2c3e50] selection:bg-[#d4af37] selection:text-white pb-20">
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div class="z-10 animate-fade-in-up">
+            <div class="flex justify-center mb-6">
+                <!-- Ensure this image is in the same folder as index.html -->
+                <img src="image_564b80.png" alt="Bismillah" class="w-64 md:w-80 h-auto drop-shadow-md">
+            </div>
+            <div class="w-24 h-px bg-[#d4af37] mx-auto mb-8"></div>
+            <h2 class="text-lg md:text-xl uppercase tracking-[0.3em] mb-4 text-gray-500 font-sans">Nikaah e Mubarak</h2>
+            <h1 class="text-5xl md:text-8xl font-bold mb-6 text-[#1a472a]">Junaid <span class="text-[#d4af37]">&</span> Shagufta</h1>
+            <div class="flex items-center justify-center gap-4 mb-8">
+                <div class="h-px w-8 bg-[#d4af37]"></div>
+                <span class="text-lg font-medium tracking-widest uppercase font-sans">23 . 05 . 2026</span>
+                <div class="h-px w-8 bg-[#d4af37]"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Details -->
+    <section class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl text-center mb-16 text-[#1a472a] font-bold italic">Program Details</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Nikkah -->
+            <div class="bg-[#1a472a] text-white p-10 rounded-3xl shadow-2xl border-b-8 border-[#d4af37] transform transition hover:scale-105 duration-300">
+                <h3 class="text-3xl font-bold mb-6 italic underline decoration-[#d4af37]">Shaadi / Nikaah</h3>
+                <div class="space-y-4 font-sans text-lg">
+                    <p><strong><i class="fa fa-calendar"></i> Tareekh:</strong> 23 May 2026</p>
+                    <p><strong><i class="fa fa-clock"></i> Waqt:</strong> Subah 11:00 AM</p>
+                    <p><strong><i class="fa fa-map-marker"></i> Maqaam:</strong> Urdu High School, Buldhana</p>
+                </div>
+            </div>
+            <!-- Walima -->
+            <div class="bg-white border-2 border-[#1a472a] p-10 rounded-3xl shadow-xl transform transition hover:scale-105 duration-300">
+                <h3 class="text-3xl font-bold text-[#1a472a] mb-6 italic underline decoration-[#d4af37]">Dawat-e-Walima</h3>
+                <div class="space-y-4 font-sans text-lg text-gray-700">
+                    <p><strong>Tareekh:</strong> 24 May 2026</p>
+                    <p><strong>Waqt:</strong> Subah 11:00 AM</p>
+                    <p><strong>Maqaam:</strong> Iqra Function Hall, Deulghat, Buldhana</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="py-16 text-center bg-[#f9f5ef] border-y border-[#eee]">
+        <h3 class="text-xl mb-10 tracking-widest text-gray-400 uppercase font-sans font-semibold">Wedding Countdown</h3>
+        <div id="countdown" class="flex justify-center gap-4 md:gap-10 text-[#1a472a] font-sans font-bold">
+            <div class="flex flex-col"><span id="days" class="text-4xl md:text-6xl">00</span><span class="text-xs uppercase text-[#d4af37] mt-2">Days</span></div>
+            <div class="text-4xl md:text-6xl opacity-30">:</div>
+            <div class="flex flex-col"><span id="hours" class="text-4xl md:text-6xl">00</span><span class="text-xs uppercase text-[#d4af37] mt-2">Hours</span></div>
+            <div class="text-4xl md:text-6xl opacity-30">:</div>
+            <div class="flex flex-col"><span id="minutes" class="text-4xl md:text-6xl">00</span><span class="text-xs uppercase text-[#d4af37] mt-2">Mins</span></div>
+            <div class="text-4xl md:text-6xl opacity-30">:</div>
+            <div class="flex flex-col"><span id="seconds" class="text-4xl md:text-6xl">00</span><span class="text-xs uppercase text-[#d4af37] mt-2">Secs</span></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-[#1a472a] text-white text-center">
+        <p class="text-[#d4af37] italic text-3xl font-bold mb-4">Duaon ke talabgaar</p>
+        <div class="w-16 h-px bg-[#d4af37] mx-auto opacity-30 mb-8"></div>
+        <p class="text-xs uppercase tracking-[0.5em] opacity-40 font-sans">Buldhana • Deulghat</p>
+    </footer>
+
+    <!-- JavaScript for Countdown -->
+    <script>
+        function updateCountdown() {
+            const weddingDate = new Date('May 23, 2026 11:00:00').getTime();
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+
+            if (diff > 0) {
+                document.getElementById('days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+                document.getElementById('hours').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                document.getElementById('minutes').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                document.getElementById('seconds').innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    </script>
+</body>
+</html>
